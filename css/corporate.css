@@ -1,0 +1,766 @@
+/* Corporate Top Page - Handwriting Animation */
+/* Updated: 2026-08-07 - Card Illustrations Added */
+
+/* ========================================
+   Reset & Base Styles
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    line-height: 1.8;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ========================================
+   First View - Handwriting Animation
+   ======================================== */
+.first-view {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    position: relative;
+}
+
+.signature-container {
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Typing Logo */
+.typing-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 180px;
+    font-weight: 900;
+    color: #0f172a;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0;
+    line-height: 1;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.typing-logo .cursor {
+    display: inline-block;
+    animation: blink 0.8s infinite;
+    margin-left: 2px;
+    font-weight: 100;
+    opacity: 0.4;
+    transform: scaleX(0.3);
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
+}
+
+/* Tagline fade in after signature */
+.tagline {
+    margin-top: 60px;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 3.8s forwards;
+}
+
+.tagline p {
+    font-size: 1.1rem;
+    color: #64748b;
+    font-weight: 400;
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    opacity: 1;
+    z-index: 10;
+}
+
+.scroll-indicator span {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: #94a3b8;
+    margin-bottom: 15px;
+}
+
+.scroll-line {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, #94a3b8, transparent);
+    margin: 0 auto;
+    animation: scrollLineMove 1.5s ease-in-out infinite;
+}
+
+@keyframes scrollLineMove {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(15px);
+        opacity: 0.3;
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* ========================================
+   Navigation
+   ======================================== */
+.main-nav {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 0.5px solid #e5e7eb;
+    padding: 25px 0;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 2.3s forwards;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-nav .container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.nav-link {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 300;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 0.5px;
+    background: #0f172a;
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: #0f172a;
+}
+
+/* ========================================
+   Business Cards Section
+   ======================================== */
+.business-cards {
+    padding: 120px 0;
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.business-cards .section-title {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-bottom: 15px;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+}
+
+.business-cards .section-subtitle {
+    text-align: center;
+    color: #0f172a;
+    font-size: 1.8rem;
+    margin-bottom: 80px;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.business-card {
+    background: white;
+    border-radius: 0;
+    overflow: hidden;
+    border: 0.5px solid #e5e7eb;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.business-card:hover {
+    border-color: #94a3b8;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+}
+
+.card-header {
+    padding: 50px 40px;
+    position: relative;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-header.sales-support {
+    background: #fafafa;
+    color: #0f172a;
+    border-bottom: 0.5px solid #e5e7eb;
+}
+
+.card-header.reuse {
+    background: #fafafa;
+    color: #0f172a;
+    border-bottom: 0.5px solid #e5e7eb;
+}
+
+.card-icon {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    opacity: 0.4;
+    font-weight: 300;
+}
+
+.card-illustration {
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+    margin: 0 auto 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-illustration img {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    opacity: 0.85;
+    filter: grayscale(10%);
+}
+
+.card-header h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+}
+
+.card-header p {
+    font-size: 0.85rem;
+    opacity: 0.6;
+    line-height: 1.8;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+}
+
+.card-body {
+    padding: 40px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-features {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.card-features li {
+    padding: 15px 0;
+    border-bottom: 0.5px solid #f1f5f9;
+    color: #64748b;
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+}
+
+.card-features li:last-child {
+    border-bottom: none;
+}
+
+.card-features li::before {
+    content: '·';
+    color: #cbd5e1;
+    font-weight: 300;
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+.card-body .btn-card {
+    width: 100%;
+    text-align: center;
+    padding: 14px;
+    border-radius: 0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    display: block;
+    letter-spacing: 0.05em;
+    font-size: 0.95rem;
+}
+
+.btn-card.blue {
+    background: transparent;
+    color: #0f172a;
+    border: 0.5px solid #cbd5e1;
+    font-weight: 300;
+}
+
+.btn-card.blue:hover {
+    background: #0f172a;
+    color: white;
+    border-color: #0f172a;
+}
+
+.btn-card.yellow {
+    background: transparent;
+    color: #0f172a;
+    border: 0.5px solid #cbd5e1;
+    font-weight: 300;
+}
+
+.btn-card.yellow:hover {
+    background: #0f172a;
+    color: white;
+    border-color: #0f172a;
+}
+
+/* ========================================
+   About Section
+   ======================================== */
+.about-section {
+    padding: 120px 0;
+    background: #fafafa;
+    border-top: 0.5px solid #e5e7eb;
+    border-bottom: 0.5px solid #e5e7eb;
+}
+
+.about-section .section-title {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-bottom: 15px;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+}
+
+.about-section .section-heading {
+    font-size: 1.8rem;
+    color: #0f172a;
+    margin-bottom: 60px;
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 0.02em;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-text p {
+    font-size: 0.95rem;
+    line-height: 2.2;
+    color: #64748b;
+    margin-bottom: 30px;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+}
+
+.about-illustration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-illustration img {
+    filter: grayscale(30%);
+    opacity: 0.6;
+}
+
+/* ========================================
+   Company Info Section
+   ======================================== */
+.company-section {
+    padding: 120px 0;
+    background: #ffffff;
+}
+
+.company-section .section-title {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-bottom: 15px;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+}
+
+.company-section .section-heading {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #0f172a;
+    margin-bottom: 60px;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+}
+
+.company-table {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 0;
+    overflow: hidden;
+    border: 0.5px solid #e5e7eb;
+}
+
+.company-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.company-table th,
+.company-table td {
+    padding: 25px 35px;
+    text-align: left;
+    border-bottom: 0.5px solid #f1f5f9;
+}
+
+.company-table th {
+    background: #fafafa;
+    color: #64748b;
+    font-weight: 300;
+    width: 200px;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+}
+
+.company-table td {
+    color: #334155;
+    font-weight: 300;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
+}
+
+.company-table tr:last-child th,
+.company-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* ========================================
+   Contact Section
+   ======================================== */
+.contact-section {
+    padding: 120px 0;
+    background: #fafafa;
+}
+
+.contact-section .section-title {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-bottom: 15px;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+}
+
+.contact-section .section-subtitle {
+    text-align: center;
+    color: #0f172a;
+    font-size: 1.8rem;
+    margin-bottom: 80px;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 80px auto 0;
+}
+
+.contact-item {
+    text-align: center;
+    padding: 50px 30px;
+    background: white;
+    border: 0.5px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    border-color: #cbd5e1;
+    transform: translateY(-5px);
+}
+
+.contact-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #94a3b8;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.contact-value {
+    display: block;
+    font-size: 1.5rem;
+    color: #0f172a;
+    text-decoration: none;
+    font-weight: 300;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+    letter-spacing: 0.02em;
+}
+
+.contact-value:hover {
+    color: #64748b;
+}
+
+.contact-line {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.2rem;
+}
+
+.contact-line i {
+    font-size: 1.5rem;
+    color: #00B900;
+}
+
+.contact-note {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+}
+
+/* ========================================
+   Footer
+   ======================================== */
+.footer {
+    background: #0f172a;
+    color: #94a3b8;
+    padding: 60px 0 30px;
+    border-top: 1px solid #1e293b;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: #94a3b8;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    border-top: 1px solid #334155;
+    padding-top: 30px;
+    text-align: center;
+    color: #64748b;
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+@media (max-width: 768px) {
+    .first-view {
+        min-height: 100vh;
+    }
+
+    .typing-logo {
+        font-size: 100px;
+    }
+
+    .scroll-indicator {
+        bottom: 30px;
+    }
+
+    .main-nav .container {
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+
+    .nav-link {
+        font-size: 0.8rem;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-illustration {
+        order: -1;
+    }
+
+    .company-table th,
+    .company-table td {
+        display: block;
+        width: 100%;
+        padding: 15px 20px;
+    }
+
+    .company-table th {
+        border-bottom: none;
+        background: #0f172a;
+        color: white;
+    }
+
+    .company-table td {
+        padding-bottom: 30px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .contact-item {
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .first-view {
+        padding: 0 20px;
+    }
+
+    .typing-logo {
+        font-size: 70px;
+    }
+
+    .business-cards,
+    .about-section,
+    .company-section {
+        padding: 60px 0;
+    }
+
+    .card-header {
+        padding: 30px 25px;
+    }
+
+    .card-body {
+        padding: 25px;
+    }
+
+    .main-nav {
+        padding: 20px 0;
+    }
+
+    .main-nav .container {
+        gap: 20px;
+    }
+
+    .nav-link {
+        font-size: 0.75rem;
+    }
+}
