@@ -110,8 +110,7 @@ abby-hr-site/
 
 ## 📧 連絡先情報
 
-- **メールアドレス**: info@abby-inc.com (現在)
-  - ※ abby-hr.com ドメイン取得後、info@abby-hr.com に変更予定
+- **メールアドレス**: info@abby-hr.com
 - **電話番号**: 03-6416-3142
 - **LINE**: @310qcqmq
 
