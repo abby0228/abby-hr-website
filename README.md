@@ -14,9 +14,8 @@
 - ✅ 「abby」ロゴが1文字ずつ表示されるアニメーション
 - ✅ カーソル点滅エフェクト
 - ✅ スムーススクロールナビゲーション
-- ✅ 2つのビジネスカード表示:
+- ✅ ビジネスカード表示:
   - 人材ソリューション事業 (→ hr-solutions.html)
-  - リユース事業 (→ https://abby-inc.com/reuse/)
 - ✅ ABOUT USセクション
 - ✅ COMPANYセクション (会社情報)
 - ✅ CONTACTセクション
@@ -39,7 +38,6 @@
 
 #### 4. **画像ファイル** - 全て復元完了
 - ✅ business-growth-team.png (人材ソリューション事業カード画像)
-- ✅ reuse-consultation.png (リユース事業カード画像)
 - ✅ illustration-meeting-1.png
 - ✅ illustration-meeting-2.png
 - ✅ illustration-handshake.png
@@ -67,7 +65,6 @@ abby-hr-site/
 │   └── main.js                   # メイン JavaScript
 └── images/
     ├── business-growth-team.png      # 人材ソリューションカード画像 ✅
-    ├── reuse-consultation.png        # リユース事業カード画像 ✅
     ├── illustration-meeting-1.png    # イラスト1 ✅
     ├── illustration-meeting-2.png    # イラスト2 ✅
     ├── illustration-handshake.png    # イラスト3 ✅
@@ -86,7 +83,6 @@ abby-hr-site/
 - **メインカラー**: #1a1a1a (ほぼ黒)
 - **背景**: #ffffff (白)
 - **アクセントカラー**: #3b82f6 (青 - 人材ソリューション)
-- **アクセントカラー**: #eab308 (黄 - リユース事業)
 
 ### デザインコンセプト
 - **0.5px極細ボーダー**: 全体で統一された繊細なデザイン
@@ -112,10 +108,6 @@ abby-hr-site/
 - お問い合わせ → `inquiry.html`
 - プライバシーポリシー → `privacy.html`
 
-### 外部リンク (abby-inc.com へ)
-- リユース事業 → `https://abby-inc.com/reuse/`
-- 特定商取引法 → `https://abby-inc.com/reuse/tokusho.html`
-
 ## 📧 連絡先情報
 
 - **メールアドレス**: info@abby-inc.com (現在)
@@ -125,21 +117,16 @@ abby-hr-site/
 
 ## 🌐 ドメイン戦略
 
-### 2つのサイトの分離運用
-1. **abby-hr.com** (このサイト)
-   - 人材ソリューション事業に特化
-   - フッターの「関連事業」からリユース事業サイト (abby-inc.com) へリンク
-   - **完全独立運用**
-
-2. **abby-inc.com** (リユース事業サイト)
-   - リユース事業専用サイト
-   - 人材ソリューション事業へのリンクなし (完全分離)
+### サイト運用
+- **abby-hr.com** (このサイト)
+  - 人材ソリューション事業に特化
+  - **完全独立運用**
 
 ## 📝 メタ情報
 
-- **タイトル**: 株式会社abby | 人材ソリューション・リユース事業
-- **ディスクリプション**: 人材ソリューション事業とリユース事業を展開する株式会社abby
-- **キーワード**: abby, 人材ソリューション, 営業支援, リユース, 古物商, ブランド買取, 東京, 渋谷
+- **タイトル**: 株式会社abby | 人材ソリューション事業
+- **ディスクリプション**: 人材ソリューション事業を展開する株式会社abby
+- **キーワード**: abby, 人材ソリューション, 営業支援, 東京, 渋谷
 - **OGP対応**: Twitter Card, Open Graph 設定済み
 
 ## 🔄 次のステップ (デプロイ準備)
@@ -208,8 +195,8 @@ Proxy status: Proxied
 - [x] css/corporate.css 復元 (アニメーションスタイル)
 - [x] js/handwriting.js 復元 (アニメーションスクリプト)
 - [x] 画像ファイル全て復元
-- [x] リンク先修正 (hr-solutions.html, abby-inc.com/reuse/)
-- [x] ビジネスカード2枚表示確認
+- [x] リンク先修正 (hr-solutions.html)
+- [x] ビジネスカード表示確認
 - [x] ナビゲーションメニュー確認
 - [x] フッター情報確認
 - [ ] GitHubへアップロード (ユーザー作業)
@@ -222,7 +209,7 @@ Proxy status: Proxied
 
 元のダウンロードファイルから完全に復元されました!
 - タイピングアニメーション機能
-- ビジネスカード2枚表示
+- ビジネスカード表示
 - スムーススクロール
 - カーソル点滅エフェクト
 - レスポンシブデザイン
