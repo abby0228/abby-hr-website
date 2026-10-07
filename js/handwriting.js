@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Typing animation
     const typingLogo = document.getElementById('typingLogo');
-    const text = 'Abby Solution';
+    const text = 'Abby\u00A0Solution';
     let index = 0;
     
     function typeText() {
