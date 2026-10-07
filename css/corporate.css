@@ -47,7 +47,7 @@ body {
 /* Typing Logo */
 .typing-logo {
     font-family: 'Montserrat', sans-serif;
-    font-size: 180px;
+    font-size: clamp(2rem, 7.5vw, 6rem);
     font-weight: 900;
     color: #0f172a;
     margin: 0;
@@ -654,7 +654,7 @@ body {
     }
 
     .typing-logo {
-        font-size: 100px;
+        font-size: clamp(1.75rem, 8.5vw, 3.5rem);
     }
 
     .scroll-indicator {
@@ -716,7 +716,7 @@ body {
     }
 
     .typing-logo {
-        font-size: 70px;
+        font-size: clamp(1.5rem, 9vw, 2.5rem);
     }
 
     .business-cards,
