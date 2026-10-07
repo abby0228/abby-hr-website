@@ -36,7 +36,6 @@ abby-hr-site/
   - 3つの強み
   - 12の業界カード
   - 会社概要（人材ソリューション事業のみ）
-  - フッター「関連事業」にabby-inc.comへのリンク
 
 - [x] **inquiry.html** - お問い合わせフォーム
   - Formspree統合（フォームID: xpqykabj）
@@ -127,8 +126,7 @@ abby-hr-site/
 - **アイコン**: Font Awesome 6.4.0
 
 ### リンク
-- **関連事業**: https://abby-inc.com/（フッターからリンク）
-- **abby-inc.com からのリンク**: なし（完全分離）
+- **内部リンク**: hr-solutions.html / inquiry.html / privacy.html
 
 ---
 

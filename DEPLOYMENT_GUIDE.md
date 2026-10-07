@@ -241,8 +241,6 @@ CNAME   www     abbyc228.github.io        DNS only
 - [ ] モバイルメニューが動作する
 - [ ] お問い合わせフォームが表示される
 - [ ] 画像がすべて表示される
-- [ ] フッターに「関連事業」リンクが表示される
-- [ ] abby-inc.comへのリンクが機能する
 - [ ] HTTPSで接続される（鍵マークが表示）
 
 ---
@@ -350,7 +348,6 @@ Google Workspaceの指示に従って、SPF・DKIMのTXTレコードを追加し
 - ✅ https://abby-hr.com でサイトにアクセス可能
 - ✅ HTTPSで安全に通信
 - ✅ お問い合わせフォームが動作
-- ✅ abby-inc.comへのリンクが機能
 - ✅ メールアドレス info@abby-hr.com が使用可能（Google Workspace契約後）
 
 ---
