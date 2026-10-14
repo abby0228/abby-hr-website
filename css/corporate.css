@@ -491,6 +491,22 @@ body {
     border-bottom: none;
 }
 
+/* Officer list (align names vertically) */
+.officer-list {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4px 0;
+    align-items: baseline;
+}
+
+.officer-role {
+    white-space: nowrap;
+}
+
+.officer-name {
+    white-space: nowrap;
+}
+
 /* ========================================
    Contact Section
    ======================================== */
